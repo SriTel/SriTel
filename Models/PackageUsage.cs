@@ -3,10 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 namespace SriTel.Models
 {
-    [PrimaryKey(nameof(UserId), nameof(ServiceId),nameof(Year),nameof(Month))]
+    // [PrimaryKey(nameof(UserId), nameof(ServiceId),nameof(Year),nameof(Month))]
     public class PackageUsage
     {
-        // public long Id { get; set; }
+        [Key]public long Id { get; set; }
         public long UserId { get; set; } // p
         public long ServiceId { get; set; } // p
         public int Year { get; set; } // p
@@ -21,5 +21,10 @@ namespace SriTel.Models
         public required int AnyNetCallMinsUsage { get; set; }
         public required int AnyNetSmsCountUsage { get; set; }
         public required int State { get; set; } // 0-deactivate, 1-activate
+
+
+        [ForeignKey("UserId")] public List<User> PackageUsage_User { get; set; } = null!;
+        [ForeignKey("ServiceId")] public List<Service> PackageUsage_Service { get; set; } = null!;
+
     }
 }

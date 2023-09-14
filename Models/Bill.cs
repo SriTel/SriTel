@@ -13,5 +13,10 @@ namespace SriTel.Models
         public required float TaxAmount { get; set; }
         public required float TotalAmount { get; set; }
         public required float DueAmount { get; set; }
+
+        
+        [ForeignKey("UserId")] public List<User> Bill_User { get; set; } = null!;
+        [ForeignKey("ServiceId")] public List<Service> Bill_Service { get; set; } = null!;
+
     }
 }

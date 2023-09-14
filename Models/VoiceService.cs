@@ -12,5 +12,9 @@ namespace SriTel.Models
         public required float RingingToneCharge { get; set; }
         public required bool IsVoiceRoaming { get; set; }
         public required float VoiceRoamingCharge { get; set; }
+
+
+        [ForeignKey("ServiceId")] public List<Service> VoiceService_Service { get; set; } = null!;
+
     }
 }

@@ -9,5 +9,9 @@ namespace SriTel.Models
         [Key]public long ServiceId { get; set; } //Service->serviceId
         public required int IsDataRoaming { get; set; }
         public required float DataRoamingCharge { get; set; }
+
+
+        [ForeignKey("ServiceId")] public List<Service> DataService_Service { get; set; } = null!;
+        
     }
 }
