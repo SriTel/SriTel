@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<SriTelContext>(
-    o => o.UseNpgsql(builder.Configuration.GetConnectionString("Ef_Postgres_Db"))
+    o => o.UseNpgsql(builder.Configuration.GetConnectionString("SriTelDB"))
     );
 
 builder.Services.AddDbContext<SriTelContext>(opt =>
