@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UW0Z+tRSE2LXh3Qi1hWhHFamHDdLSBkj6WVZQ6FBgQMinYVkkExutdzBwmpRGREpGe+RYYfDPV9dEFad/15ACg==",
+  "dgSpecHash": "a7zsy6YTcxPWpy0VC7wU0sbsP0K6q48Zdbu34NZu375MMaH+uUdhyJW4l/FEw15hI+vrS6vDXynevIeIYXdHsQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kimuthu Kisal\\Desktop\\SriTel\\SriTel\\SriTel.csproj",
+  "projectFilePath": "c:\\Users\\Kimuthu Kisal\\Desktop\\SriTel\\SriTel\\SriTel.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kimuthu Kisal\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Kimuthu Kisal\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
