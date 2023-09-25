@@ -5,7 +5,9 @@ namespace SriTel.Models;
 
 public class User
 {
-    [Key]public long Id { get; set; }
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public long Id { get; set; }
     public required string Nic { get; set; }
     public required string FirstName { get; set; }
     public required string Lastname { get; set; }

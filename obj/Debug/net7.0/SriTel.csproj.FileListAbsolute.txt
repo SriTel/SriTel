@@ -560,3 +560,5 @@ C:/Users/Kimuthu Kisal/Desktop/SriTel/SriTel/bin/Debug/net7.0/Npgsql.EntityFrame
 /home/dinuka/SriTel/Server/obj/Debug/net7.0/SriTel.pdb
 /home/dinuka/SriTel/Server/obj/Debug/net7.0/SriTel.genruntimeconfig.cache
 /home/dinuka/SriTel/Server/obj/Debug/net7.0/ref/SriTel.dll
+/home/dinuka/SriTel/Server/bin/Debug/net7.0/BCrypt.Net-Next.dll
+/home/dinuka/SriTel/Server/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

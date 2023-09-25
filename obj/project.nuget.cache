@@ -1,15 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "fybiSoC600TX9wWkUZvjh52OG20aXOMDjaB0x3pLyKs/4vstLETuRsn7qNBHwL1qgzZexDw3zquwSczzzXxMpQ==",
+  "dgSpecHash": "rA9gz6T5vo81sqQnPsnr8OZHkOvQ/VbEgtgJUmcYYkpukzS6wWEGnX/yYaLlAX+zTbY4GkDEGKgtgGCyo/CNcA==",
   "success": true,
   "projectFilePath": "/home/dinuka/SriTel/Server/SriTel.csproj",
   "expectedPackageFiles": [
     "/home/dinuka/.nuget/packages/azure.core/1.24.0/azure.core.1.24.0.nupkg.sha512",
     "/home/dinuka/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",
+    "/home/dinuka/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/home/dinuka/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/dinuka/.nuget/packages/messagepack/2.1.152/messagepack.2.1.152.nupkg.sha512",
     "/home/dinuka/.nuget/packages/messagepack.annotations/2.1.152/messagepack.annotations.2.1.152.nupkg.sha512",
     "/home/dinuka/.nuget/packages/messagepackanalyzer/2.1.152/messagepackanalyzer.2.1.152.nupkg.sha512",
+    "/home/dinuka/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/7.0.11/microsoft.aspnetcore.authentication.jwtbearer.7.0.11.nupkg.sha512",
     "/home/dinuka/.nuget/packages/microsoft.aspnetcore.openapi/7.0.11/microsoft.aspnetcore.openapi.7.0.11.nupkg.sha512",
     "/home/dinuka/.nuget/packages/microsoft.aspnetcore.razor.language/6.0.0/microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
     "/home/dinuka/.nuget/packages/microsoft.bcl.asyncinterfaces/5.0.0/microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",

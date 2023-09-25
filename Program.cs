@@ -1,16 +1,40 @@
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using SriTel.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-
+builder.Configuration.AddJsonFile("appsettings.json");
 builder.Services.AddDbContext<SriTelContext>(
     o => o.UseNpgsql(builder.Configuration.GetConnectionString("SriTelDB"))
     );
-
 builder.Services.AddDbContext<SriTelContext>(opt =>
     opt.UseInMemoryDatabase("SriTelDB"));
+
+// JWT auth
+var jwtSettings = builder.Configuration.GetSection("JwtSettings");
+var key = Encoding.ASCII.GetBytes(jwtSettings["Key"]);
+
+builder.Services.AddAuthentication(options =>
+    {
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidIssuer = "kidds",
+            ValidAudience = "sritel",
+            IssuerSigningKey = new SymmetricSecurityKey(key)
+        };
+    });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
