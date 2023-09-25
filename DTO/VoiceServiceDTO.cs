@@ -32,7 +32,7 @@ public class VoiceServiceDTO
         {
             ServiceId = ServiceId,
             IsRinginngTone = IsRinginngTone,
-            RingingToneName = RingingToneName,
+            RingingToneName = RingingToneName!,
             RingingToneCharge = RingingToneCharge,
             IsVoiceRoaming = IsVoiceRoaming,
             VoiceRoamingCharge = VoiceRoamingCharge

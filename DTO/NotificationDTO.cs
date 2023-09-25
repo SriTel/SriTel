@@ -33,8 +33,8 @@ public class NotificationDTO
             Id = Id,
             UserId = UserId,
             DateTime = DateTime,
-            Title = Title,
-            Description = Description,
+            Title = Title!,
+            Description = Description!,
             Priority = Priority
         };
     }

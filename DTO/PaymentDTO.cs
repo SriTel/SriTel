@@ -37,7 +37,7 @@ public class PaymentDTO
             PayDateTime = PayDateTime,
             UserId = UserId,
             ServiceId = ServiceId,
-            PayMethod = PayMethod,
+            PayMethod = PayMethod!,
             PayAmount = PayAmount
         };
     }

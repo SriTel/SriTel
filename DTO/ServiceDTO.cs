@@ -30,10 +30,10 @@ public class ServiceDTO
         return new Service
         {
             Id = Id,
-            Name = Name,
+            Name = Name!,
             Charge = Charge,
-            State = State,
-            Type = Type
+            State = State!,
+            Type = Type!
         };
     }
 }

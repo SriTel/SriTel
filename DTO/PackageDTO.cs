@@ -46,10 +46,10 @@ public class PackageDTO
         return new Package
         {
             Id = Id,
-            Name = Name,
-            Renewal = Renewal,
-            Description = Description,
-            Image = Image,
+            Name = Name!,
+            Renewal = Renewal!,
+            Description = Description!,
+            Image = Image!,
             Charge = Charge,
             OffPeekData = OffPeekData,
             PeekData = PeekData,
