@@ -1,4 +1,4 @@
-using Microsoft.Build.Framework;
+using System.ComponentModel.DataAnnotations;
 using SriTel.Models;
 
 namespace SriTel.DTO;

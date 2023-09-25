@@ -9,14 +9,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3ca1a2e-b6bf-4195-b4db-92ae1ffa5075" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Controllers/AddOnController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/BalanceController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/BillController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/PackageController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/PaymentController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/TelcoServiceController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SriTel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SriTel/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/WeatherForecastController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTO/AddOnDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTO/AddOnDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTO/BillDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTO/BillDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTO/DataServiceDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTO/DataServiceDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTO/LoginDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTO/LoginDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTO/NotificationDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTO/NotificationDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTO/PackageDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTO/PackageDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTO/PackageUsageDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTO/PackageUsageDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTO/PaymentDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTO/PaymentDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTO/ServiceDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTO/ServiceDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTO/VoiceServiceDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTO/VoiceServiceDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/AddOn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/AddOn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/AddOnActivation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/AddOnActivation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Bill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Bill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/DataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/DataService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Notification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Notification.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Package.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Package.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/PackageUsage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/PackageUsage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Payment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Payment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Service.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Service.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/VoiceService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/VoiceService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/SriTel.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/SriTel.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/SriTel.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/SriTel.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/SriTel.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/SriTel.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/SriTel.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/SriTel.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/SriTel.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/obj/SriTel.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +126,7 @@
       <workItem from="1695601128212" duration="2264000" />
       <workItem from="1695603410703" duration="6081000" />
       <workItem from="1695609633608" duration="7786000" />
+      <workItem from="1695659693576" duration="849000" />
     </task>
     <task id="LOCAL-00001" summary="resolved conflicts">
       <option name="closed" value="true" />

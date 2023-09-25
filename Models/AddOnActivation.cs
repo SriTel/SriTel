@@ -1,6 +1,5 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
 namespace SriTel.Models
 {
     // [PrimaryKey(nameof(UserId),nameof(AddOnId),nameof(ActivatedDateTime))]
