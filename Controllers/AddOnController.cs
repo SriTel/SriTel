@@ -107,14 +107,23 @@ public class AddOnController : Controller
     // hint: you should get the user id and addon id from front-end
     // task of a user
     [HttpPost("{uid}/{aoid}")]  // userID, addOnId
-    public async Task<ActionResult<AddOnDTO>> ActivateAddOn(long uid, long aoid)
+    public async Task<ActionResult<AddOnActivationDTO>> ActivateAddOn(long uid, long aoid)
     {
-        var addOnActivation = new AddOnActivationDTO (1, 1, uid, aoid, DateTime(), 0);
+        AddOnActivationDTO addOnActivation = new AddOnActivationDTO();
+        addOnActivation.DataServiceId = 12;     // what is this
+        addOnActivation.UserId = uid;
+        addOnActivation.AddOnId = aoid;
+        addOnActivation.ActivatedDateTime = (DateTime)DateTime();
+        addOnActivation.DataUsage = 0;
+
+        var add_on_activation = addOnActivation.ToAddOnActivation();
+        _context.AddOnActivation.Add(add_on_activation);
+        await _context.SaveChangesAsync();
 
         // var addOn = addOnDTO.ToAddOn();
         // _context.AddOn.Add(addOn);
         // await _context.SaveChangesAsync();
-        // return CreatedAtAction(nameof(GetAddOn), new { id = addOn.Id }, AddOnDTO.FromAddOn(addOn));
+        return Ok("AddOn Activated Successfully");
     }
 
 
