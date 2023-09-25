@@ -6,19 +6,19 @@ namespace SriTel.DTO;
 public class PackageDTO
 {
     [Required]public long Id { get; set; }
-    public required string Name { get; set; }
-    public required string Renewal { get; set; }
-    // public required string Status { get; set; }
-    public required string Description { get; set; }
-    public required string Image { get; set; }
-    public required float Charge { get; set; }
-    public required float OffPeekData { get; set; }
-    public required float PeekData { get; set; }
-    public required float AnytimeDate { get; set; }
-    public required int S2SCallMins { get; set; }
-    public required int S2SSmsCount { get; set; }
-    public required int AnyNetCallMins { get; set; }
-    public required int AnyNetSmsCount { get; set; }
+    public string? Name { get; set; }
+    public string? Renewal { get; set; }
+    // public string Status { get; set; }
+    public string? Description { get; set; }
+    public string? Image { get; set; }
+    public float Charge { get; set; }
+    public float OffPeekData { get; set; }
+    public float PeekData { get; set; }
+    public float AnytimeDate { get; set; }
+    public int S2SCallMins { get; set; }
+    public int S2SSmsCount { get; set; }
+    public int AnyNetCallMins { get; set; }
+    public int AnyNetSmsCount { get; set; }
 
 
     public static PackageDTO FromPackage(Package package)

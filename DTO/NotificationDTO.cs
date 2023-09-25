@@ -7,10 +7,10 @@ public class NotificationDTO
 {
     [Required]public long Id { get; set; } //p
     public long UserId { get; set; }
-    public required DateTime DateTime { get; set; } = DateTime.Now;
-    public required string Title { get; set; }
-    public required string Description { get; set; }
-    public required int Priority { get; set; }
+    public DateTime DateTime { get; set; } = DateTime.Now;
+    public string? Title { get; set; }
+    public string? Description { get; set; }
+    public int Priority { get; set; }
 
 
     public static NotificationDTO FromNotification(Notification notification)

@@ -6,11 +6,11 @@ namespace SriTel.DTO;
 public class VoiceServiceDTO
 {
     [Required]public long ServiceId { get; set; } //Service->serviceId
-        public required bool IsRinginngTone { get; set; }
-        public required string RingingToneName { get; set; }
-        public required float RingingToneCharge { get; set; }
-        public required bool IsVoiceRoaming { get; set; }
-        public required float VoiceRoamingCharge { get; set; }
+        public bool IsRinginngTone { get; set; }
+        public string? RingingToneName { get; set; }
+        public float RingingToneCharge { get; set; }
+        public bool IsVoiceRoaming { get; set; }
+        public float VoiceRoamingCharge { get; set; }
 
 
     public static VoiceServiceDTO FromVoiceService(VoiceService voiceService)
