@@ -9,34 +9,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3ca1a2e-b6bf-4195-b4db-92ae1ffa5075" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Controllers/AuthController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/UserController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTO/LoginDTO.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTO/UserDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/AddOnController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/BalanceController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/BillController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/PackageController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/PaymentController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/TelcoServiceController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SriTel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SriTel/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dto/todoDto" beforeDir="false" afterPath="$PROJECT_DIR$/DTO/todoDto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SriTel.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SriTel.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/SriTel.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/SriTel.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/SriTel.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/SriTel.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/SriTel.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/SriTel.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net7.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net7.0/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/SriTel.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/SriTel.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/SriTel.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/SriTel.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/SriTel.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/SriTel.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/SriTel.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/SriTel.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/SriTel.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/SriTel.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/SriTel.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/SriTel.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/ref/SriTel.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/ref/SriTel.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net7.0/refint/SriTel.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net7.0/refint/SriTel.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/SriTel.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/SriTel.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/WeatherForecastController.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +102,7 @@
       <updated>1695601124788</updated>
       <workItem from="1695601128212" duration="2264000" />
       <workItem from="1695603410703" duration="6081000" />
-      <workItem from="1695609633608" duration="5939000" />
+      <workItem from="1695609633608" duration="7786000" />
     </task>
     <task id="LOCAL-00001" summary="resolved conflicts">
       <option name="closed" value="true" />
