@@ -111,6 +111,12 @@ public class AddOnController : Controller
     {
         AddOnActivationDTO addOnActivation = new AddOnActivationDTO();
         addOnActivation.DataServiceId = 12;     // what is this
+        // there are only two services in the service table
+        // one is internet service (comes under dataservice)
+        // other one is voice service (comes under voice service)
+        // so there is only a single entry in dataservice table
+        // get that service's id and take it as the addOnActivation.DataServiceId
+        
         addOnActivation.UserId = uid;
         addOnActivation.AddOnId = aoid;
         addOnActivation.ActivatedDateTime = (DateTime)DateTime();
