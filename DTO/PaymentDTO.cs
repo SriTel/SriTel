@@ -7,11 +7,11 @@ public class PaymentDTO
 {
     [Required]public long Id { get; set; }
         public long BillId { get; set; }    //bill->billId   p
-        public required DateTime PayDateTime { get; set; }  // p
+        public DateTime PayDateTime { get; set; }  // p
         public long UserId { get; set; }    //user->userId   
         public long ServiceId { get; set; }    //service->serviceId   
-        public required string PayMethod { get; set; }
-        public required float PayAmount { get; set; }
+        public string? PayMethod { get; set; }
+        public float PayAmount { get; set; }
 
 
     public static PaymentDTO FromPayment(Payment payment)
@@ -37,7 +37,7 @@ public class PaymentDTO
             PayDateTime = PayDateTime,
             UserId = UserId,
             ServiceId = ServiceId,
-            PayMethod = PayMethod,
+            PayMethod = PayMethod!,
             PayAmount = PayAmount
         };
     }
