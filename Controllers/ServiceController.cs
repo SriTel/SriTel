@@ -44,6 +44,9 @@ public class ServiceController : Controller
         await _context.SaveChangesAsync();
 
         return Ok(new { Status = "Success" });
+
+        // AFTER DELETION OF THE SERVICE, RELEVANT DELETION MUST BE DONE ON VOICE OR DATA TOO. 
+        // CONSIDER THIS?? DONT KNNOW WHETHER THESE CAN BE DELETED OR NOT
     }
     
     // 3. Update an existing Service in the database
@@ -75,6 +78,8 @@ public class ServiceController : Controller
             return NotFound();
         }
         return ServiceDTO.FromService(service);
+
+        // AFTER CHANGES OF THE SERVICE, RELEVANT CHANGES MUST BE DONE ON VOICE OR DATA TOO. CONSIDER THIS??
     }
     
     
