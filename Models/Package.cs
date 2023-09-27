@@ -11,13 +11,13 @@ namespace SriTel.Models
         // public required string Status { get; set; }
         public required string Description { get; set; }
         public required string Image { get; set; }
-        public required float Charge { get; set; }
-        public required float OffPeekData { get; set; }
-        public required float PeekData { get; set; }
-        public required float AnytimeData { get; set; }
-        public required int S2SCallMins { get; set; }
-        public required int S2SSmsCount { get; set; }
-        public required int AnyNetCallMins { get; set; }
-        public required int AnyNetSmsCount { get; set; }
+        public required float Charge { get; set; } = 0;
+        public required float OffPeekData { get; set; } = 0;
+        public required float PeekData { get; set; } = 0;
+        public required float AnytimeData { get; set; } = 0;
+        public required int S2SCallMins { get; set; } = 0;
+        public required int S2SSmsCount { get; set; } = 0;
+        public required int AnyNetCallMins { get; set; } = 0;
+        public required int AnyNetSmsCount { get; set; } = 0;
     }
 }

@@ -11154,15 +11154,12 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kimuthu Kisal\\Desktop\\SriTel\\SriTel\\SriTel.csproj",
+      "projectUniqueName": "c:\\Users\\Kimuthu Kisal\\Desktop\\SriTel\\SriTel\\SriTel.csproj",
       "projectName": "SriTel",
-      "projectPath": "C:\\Users\\Kimuthu Kisal\\Desktop\\SriTel\\SriTel\\SriTel.csproj",
+      "projectPath": "c:\\Users\\Kimuthu Kisal\\Desktop\\SriTel\\SriTel\\SriTel.csproj",
       "packagesPath": "C:\\Users\\Kimuthu Kisal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kimuthu Kisal\\Desktop\\SriTel\\SriTel\\obj\\",
+      "outputPath": "c:\\Users\\Kimuthu Kisal\\Desktop\\SriTel\\SriTel\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\Kimuthu Kisal\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

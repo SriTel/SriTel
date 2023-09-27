@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 using SriTel.DTO;
 using SriTel.Models;
 
@@ -113,12 +114,84 @@ public class PackageController : Controller
     // 5. Activate a package for a user
     // hint: get the package id and user id from front-end.
     // task of a user
+    [HttpPost("{uid}/{sid}/{pid}")]
+    public async Task<ActionResult> AddNewPakage(long uid, long sid, long pid)
+    {
+        // get the package details for current month
+        DateTime currentDate = DateTime.Now;
+        var userActivatedPackages = _context.PackageUsage.Where(pu => pu.UserId==uid && pu.Month==currentDate.Month && pu.Year==currentDate.Year && pu.ServiceId==sid && pu.State==1).ToListAsync();
+
+        if ( userActivatedPackages == null ){
+            // details for new entry
+            var packageUsage = new PackageUsageDTO();
+            packageUsage.UserId = uid;
+            packageUsage.ServiceId = sid;
+            packageUsage.PackageId = pid;
+            packageUsage.Year = currentDate.Year;
+            packageUsage.Month = currentDate.Month;
+            packageUsage.State =1;
+
+            _context.PackageUsage.Add(packageUsage.ToPackageUsage());
+            await _context.SaveChangesAsync();
+            return Ok("Package added successfully");
+        } else {
+            return BadRequest("You Already have one package from this service. You can upgrade or dowgrade your existing package");
+        }
+    }
    
     // 6. Upgrade or Downgrade a package for a user
     // task of a user
+    [HttpPut("Update/{uid}/{sid}/{pid}")]
+    public async Task<ActionResult> UpdatePakage(long uid, long sid, long pid)
+    {
+        // get the package details for current month
+        DateTime currentDate = DateTime.Now;
+        var userActivatedPackage = _context.PackageUsage.Where(pu => pu.UserId==uid && pu.Month==currentDate.Month && pu.Year==currentDate.Year && pu.ServiceId==sid && pu.State==1).FirstOrDefault();
+
+        if ( userActivatedPackage != null ){
+            userActivatedPackage.PackageId = pid;
+            await _context.SaveChangesAsync();
+            return Ok("Package updated successfully");
+        } else {
+            return BadRequest("You have no existing package from this service. You can add a new package from this service.");
+        }
+    }
     
     // 7. Deactivate a package for a user
     // task of a user
+    [HttpPut("Deactivate/{uid}/{pid}")]
+    public async Task<ActionResult> DeactivatePakage(long uid, long pid)
+    {
+        // get the package details for current month
+        DateTime currentDate = DateTime.Now;
+        var userActivatedPackage = _context.PackageUsage.Where(pu => pu.UserId==uid && pu.Month==currentDate.Month && pu.Year==currentDate.Year && pu.PackageId==pid && pu.State==1).FirstOrDefault();
+
+        if ( userActivatedPackage != null && userActivatedPackage.PackageId==pid ){
+            userActivatedPackage.State = 0;
+            await _context.SaveChangesAsync();
+            return Ok("Package updated successfully");
+        } else {
+            return BadRequest("You have no existing package from this service. You can add a new package from this service.");
+        }
+    }
+
+    // 8. Activate a deactivated package for a user
+    // task of a user
+    [HttpPut("Deactivate/{uid}/{pid}")]
+    public async Task<ActionResult> ReactivatePakage(long uid, long pid)
+    {
+        // get the package details for current month
+        DateTime currentDate = DateTime.Now;
+        var userActivatedPackage = _context.PackageUsage.Where(pu => pu.UserId==uid && pu.Month==currentDate.Month && pu.Year==currentDate.Year && pu.PackageId==pid && pu.State==0).FirstOrDefault();
+
+        if ( userActivatedPackage != null && userActivatedPackage.PackageId==pid ){
+            userActivatedPackage.State = 1;
+            await _context.SaveChangesAsync();
+            return Ok("Package updated successfully");
+        } else {
+            return BadRequest("You have no existing package from this service. You can add a new package from this service.");
+        }
+    }
     
     
     private bool PackageExists(long id)
