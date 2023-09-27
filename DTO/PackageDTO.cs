@@ -14,7 +14,7 @@ public class PackageDTO
     public float Charge { get; set; }
     public float OffPeekData { get; set; }
     public float PeekData { get; set; }
-    public float AnytimeDate { get; set; }
+    public float AnytimeData { get; set; }
     public int S2SCallMins { get; set; }
     public int S2SSmsCount { get; set; }
     public int AnyNetCallMins { get; set; }
@@ -33,7 +33,7 @@ public class PackageDTO
             Charge = package.Charge,
             OffPeekData = package.OffPeekData,
             PeekData = package.PeekData,
-            AnytimeDate = package.AnytimeDate,
+            AnytimeData = package.AnytimeData,
             S2SCallMins = package.S2SCallMins,
             S2SSmsCount = package.S2SSmsCount,
             AnyNetCallMins = package.AnyNetCallMins,
@@ -53,7 +53,7 @@ public class PackageDTO
             Charge = Charge,
             OffPeekData = OffPeekData,
             PeekData = PeekData,
-            AnytimeDate = AnytimeDate,
+            AnytimeData = AnytimeData,
             S2SCallMins = S2SCallMins,
             S2SSmsCount = S2SSmsCount,
             AnyNetCallMins = AnyNetCallMins,

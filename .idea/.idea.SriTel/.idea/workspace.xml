@@ -13,7 +13,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c3ca1a2e-b6bf-4195-b4db-92ae1ffa5075" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SriTel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SriTel/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ServiceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ServiceController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/PackageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/PackageController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTO/PackageDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTO/PackageDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Package.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Package.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "5-KKS-service__controller",
+    "git-widget-placeholder": "7-KKS-package__controller",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -152,7 +154,7 @@
       <workItem from="1695609633608" duration="7786000" />
       <workItem from="1695661788463" duration="647000" />
       <workItem from="1695714486785" duration="12000" />
-      <workItem from="1695775260434" duration="4702000" />
+      <workItem from="1695775260434" duration="8384000" />
     </task>
     <task id="LOCAL-00001" summary="resolved conflicts">
       <option name="closed" value="true" />
