@@ -11149,24 +11149,33 @@
     ]
   },
   "packageFolders": {
-    "/home/dinuka/.nuget/packages/": {}
+    "C:\\Users\\THIS PC\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/dinuka/SriTel/Server/SriTel.csproj",
+      "projectUniqueName": "D:\\UCSC\\UCSC_Assignments\\3_year\\middleware\\assignment_3\\SriTel\\SriTel.csproj",
       "projectName": "SriTel",
-      "projectPath": "/home/dinuka/SriTel/Server/SriTel.csproj",
-      "packagesPath": "/home/dinuka/.nuget/packages/",
-      "outputPath": "/home/dinuka/SriTel/Server/obj/",
+      "projectPath": "D:\\UCSC\\UCSC_Assignments\\3_year\\middleware\\assignment_3\\SriTel\\SriTel.csproj",
+      "packagesPath": "C:\\Users\\THIS PC\\.nuget\\packages\\",
+      "outputPath": "D:\\UCSC\\UCSC_Assignments\\3_year\\middleware\\assignment_3\\SriTel\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/dinuka/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\THIS PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -11253,7 +11262,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.111/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }
