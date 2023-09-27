@@ -24,7 +24,7 @@ public class ServiceController : Controller
         var service = serviceDto.ToService();
         _context.Service.Add(service);
         await _context.SaveChangesAsync();
-        return CreatedAtAction(nameof(GetService), new { id = service.Id }, ServiceDTO.FromService(service));
+       return CreatedAtAction(nameof(GetService), new { id = service.Id }, ServiceDTO.FromService(service));
     }
     
     // 2. Remove an existing Service
