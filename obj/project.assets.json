@@ -11160,6 +11160,9 @@
       "packagesPath": "C:\\Users\\Kimuthu Kisal\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Kimuthu Kisal\\Desktop\\SriTel\\SriTel\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\Kimuthu Kisal\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
