@@ -7,9 +7,9 @@ namespace SriTel.Models
     {
         [Key]public long Id { get; set; }
         // public long PackageId { get; set; } //package->packageId
-        public required string Name { get; set; }
+        public required string? Name { get; set; }
         public required float Charge { get; set; }
-        public required string State { get; set; }
-        public required string Type { get; set; }
+        public required string? State { get; set; }
+        public required string? Type { get; set; }
     }
 }
