@@ -29,7 +29,7 @@ namespace SriTel.DTO
                 Id = user.Id,
                 Nic = user.Nic,
                 FirstName = user.FirstName,
-                LastName = user.Lastname,
+                LastName = user.LastName,
                 MobileNumber = user.MobileNumber,
                 Email = user.Email,
             };
@@ -42,7 +42,7 @@ namespace SriTel.DTO
             {
                 Nic = Nic,
                 FirstName = FirstName,
-                Lastname = LastName,
+                LastName = LastName,
                 MobileNumber = MobileNumber,
                 Email = Email,
                 Password = Password

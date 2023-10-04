@@ -9,8 +9,14 @@ public class AddOnActivationDTO
     public long DataServiceId { get; set; } //Dataservice->dataserviceId    
     public long UserId { get; set; } //user->userId    p
     public long AddOnId { get; set; } //addon->addonId    p
+    
+    public required AddOnType Type { get; set; }
     public DateTime ActivatedDateTime { get; set; }   // p
-    public float DataUsage { get; set; }
+    
+    public DateTime ExpireDateTime { get; set; }
+    public double DataUsage { get; set; }
+    
+    public double TotalData { get; set; }
 
 
     public static AddOnActivationDTO FromAddOnActivation(AddOnActivation addOnActivation)
@@ -21,8 +27,11 @@ public class AddOnActivationDTO
             DataServiceId = addOnActivation.DataServiceId,
             UserId = addOnActivation.UserId,
             AddOnId = addOnActivation.AddOnId,
+            Type = addOnActivation.Type,
             ActivatedDateTime = addOnActivation.ActivatedDateTime,
-            DataUsage = addOnActivation.DataUsage
+            ExpireDateTime = addOnActivation.ExpireDateTime,
+            DataUsage = addOnActivation.DataUsage,
+            TotalData = addOnActivation.TotalData
         };
     }
 
@@ -34,8 +43,11 @@ public class AddOnActivationDTO
             DataServiceId = DataServiceId,
             UserId = UserId,
             AddOnId = AddOnId,
+            Type = Type,
             ActivatedDateTime = ActivatedDateTime,
-            DataUsage = DataUsage
+            ExpireDateTime = ExpireDateTime,
+            DataUsage = DataUsage,
+            TotalData = TotalData
         };
     }
 }

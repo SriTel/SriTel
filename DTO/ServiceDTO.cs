@@ -10,7 +10,7 @@ public class ServiceDTO
         public string? Name { get; set; }
         public float Charge { get; set; }
         public string? State { get; set; }
-        public string? Type { get; set; }
+        public ServiceType Type { get; set; }
 
 
     public static ServiceDTO FromService(Service service)

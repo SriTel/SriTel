@@ -5,6 +5,8 @@ using SriTel.DTO;
 using SriTel.Models;
 
 namespace SriTel.Controllers;
+[Route("api/[controller]")]
+[ApiController]
 
 public class AddOnController : Controller
 {
@@ -106,32 +108,81 @@ public class AddOnController : Controller
     // 6. Add a new addon to a user
     // hint: you should get the user id and addon id from front-end
     // task of a user
-    [HttpPost("{uid}/{aoid}")]  // userID, addOnId
-    public async Task<ActionResult<AddOnActivationDTO>> ActivateAddOn(long uid, long aoid)
+    [HttpGet("{uid}/{aoid}")]  // userID, addOnId
+    [Authorize]
+    public async Task<ActionResult> ActivateAddOn(long uid, long aoid)
     {
-        AddOnActivationDTO addOnActivation = new AddOnActivationDTO();
-        addOnActivation.DataServiceId = 12;     // what is this
-        // there are only two services in the service table
-        // one is internet service (comes under dataservice)
-        // other one is voice service (comes under voice service)
-        // so there is only a single entry in dataservice table
-        // get that service's id and take it as the addOnActivation.DataServiceId
+        // get the package type first
+        var addOn = await _context.AddOn.FindAsync(aoid);
+        if (addOn == null) return NotFound();
+        var serviceId = (await _context.Service.Where(s => s.Type == ServiceType.Data).FirstAsync()).Id;
         
-        addOnActivation.UserId = uid;
-        addOnActivation.AddOnId = aoid;
-        addOnActivation.ActivatedDateTime = (DateTime)DateTime();
-        addOnActivation.DataUsage = 0;
+        // check if user already have that addOn.
+        var currentAddOn =
+            await _context.AddOnActivation.Where(ad => ad.UserId == uid && ad.AddOnId == aoid).FirstOrDefaultAsync();
+        
+        // if not create a new one
+        if (currentAddOn == null)
+        {
+            var newAddOnActivation = new AddOnActivation
+            {
+                DataServiceId = serviceId,
+                UserId = uid,
+                AddOnId = aoid,
+                Type = addOn.Type,
+                ActivatedDateTime = System.DateTime.Now,
+                ExpireDateTime = System.DateTime.Now.AddDays(addOn.ValidNoOfDays),
+                DataUsage = 0,
+                TotalData = addOn.DataAmount
+            };
+            _context.AddOnActivation.Add(newAddOnActivation);
+        }
+        // if yes update it
+        else
+        {
+            // first check if the current one is expired
+            // if not update it
+            if (currentAddOn.ExpireDateTime > System.DateTime.Now)
+            {
+                currentAddOn.ActivatedDateTime = System.DateTime.Now;
+                currentAddOn.ExpireDateTime =
+                    currentAddOn.ExpireDateTime > System.DateTime.Now.AddDays(addOn.ValidNoOfDays)
+                        ? currentAddOn.ExpireDateTime
+                        : System.DateTime.Now.AddDays(addOn.ValidNoOfDays);
+                currentAddOn.TotalData += addOn.DataAmount;
+            }
+            // if yes restore that one
+            else
+            {
+                currentAddOn.ActivatedDateTime = System.DateTime.Now;
+                currentAddOn.ExpireDateTime = System.DateTime.Now.AddDays(addOn.ValidNoOfDays);
+                currentAddOn.DataUsage = 0;
+                currentAddOn.TotalData = addOn.DataAmount;
+            }
+            
+        }
+        
+        // if the addOn is a extraGB addon
+        // extend the activationTime for similar extra gb addons of the given user
+        if (addOn.Type == AddOnType.ExtraGb)
+        {
+            var similarAddOns = await _context.AddOnActivation
+                .Where(ad =>
+                    ad.UserId == uid && ad.Type == AddOnType.ExtraGb &&
+                    ad.ExpireDateTime > System.DateTime.Now &&
+                    ad.DataUsage < ad.TotalData)
+                .ToListAsync();
 
-        var add_on_activation = addOnActivation.ToAddOnActivation();
-        _context.AddOnActivation.Add(add_on_activation);
+            foreach (var similarAddOn in similarAddOns)
+            {
+                similarAddOn.ActivatedDateTime = System.DateTime.Now;
+                similarAddOn.ExpireDateTime = System.DateTime.Now.AddDays(addOn.ValidNoOfDays);
+            }
+
+        }
         await _context.SaveChangesAsync();
-
-        // var addOn = addOnDTO.ToAddOn();
-        // _context.AddOn.Add(addOn);
-        // await _context.SaveChangesAsync();
-        return Ok("AddOn Activated Successfully");
+        return Ok();
     }
-
 
     private object DateTime()
     {

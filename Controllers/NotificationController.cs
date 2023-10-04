@@ -5,7 +5,8 @@ using SriTel.DTO;
 using SriTel.Models;
 
 namespace SriTel.Controllers;
-
+[Route("api/[controller]")]
+[ApiController]
 public class NotificationController : Controller
 {
     private readonly SriTelContext _context;

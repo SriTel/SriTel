@@ -7,8 +7,9 @@ public class PackageDTO
 {
     [Required]public long Id { get; set; }
     public string? Name { get; set; }
-    public string? Renewal { get; set; }
-    // public string Status { get; set; }
+    public RenewalType? Renewal { get; set; }
+    
+    public ServiceType Type { get; set; }
     public string? Description { get; set; }
     public string? Image { get; set; }
     public float Charge { get; set; }
@@ -28,6 +29,7 @@ public class PackageDTO
             Id = package.Id,
             Name = package.Name,
             Renewal = package.Renewal,
+            Type = package.Type,
             Description = package.Description,
             Image = package.Image,
             Charge = package.Charge,
@@ -45,9 +47,9 @@ public class PackageDTO
     {
         return new Package
         {
-            Id = Id,
             Name = Name!,
             Renewal = Renewal!,
+            Type = Type,
             Description = Description!,
             Image = Image!,
             Charge = Charge,

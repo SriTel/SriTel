@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace SriTel.Migrations
 {
     /// <inheritdoc />
-    public partial class initialMigration7 : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -33,14 +33,14 @@ namespace SriTel.Migrations
                 name: "DataService",
                 columns: table => new
                 {
-                    ServiceId = table.Column<long>(type: "bigint", nullable: false)
+                    UserId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     IsDataRoaming = table.Column<int>(type: "integer", nullable: false),
                     DataRoamingCharge = table.Column<float>(type: "real", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DataService", x => x.ServiceId);
+                    table.PrimaryKey("PK_DataService", x => x.UserId);
                 });
 
             migrationBuilder.CreateTable(
@@ -67,13 +67,14 @@ namespace SriTel.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Name = table.Column<string>(type: "text", nullable: false),
-                    Renewal = table.Column<string>(type: "text", nullable: false),
+                    Renewal = table.Column<int>(type: "integer", nullable: true),
+                    Type = table.Column<int>(type: "integer", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: false),
                     Image = table.Column<string>(type: "text", nullable: false),
                     Charge = table.Column<float>(type: "real", nullable: false),
                     OffPeekData = table.Column<float>(type: "real", nullable: false),
                     PeekData = table.Column<float>(type: "real", nullable: false),
-                    AnytimeDate = table.Column<float>(type: "real", nullable: false),
+                    AnytimeData = table.Column<float>(type: "real", nullable: false),
                     S2SCallMins = table.Column<int>(type: "integer", nullable: false),
                     S2SSmsCount = table.Column<int>(type: "integer", nullable: false),
                     AnyNetCallMins = table.Column<int>(type: "integer", nullable: false),
@@ -98,7 +99,7 @@ namespace SriTel.Migrations
                     UpdateDateTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     OffPeekDataUsage = table.Column<float>(type: "real", nullable: false),
                     PeekDataUsage = table.Column<float>(type: "real", nullable: false),
-                    AnytimeDateUsage = table.Column<float>(type: "real", nullable: false),
+                    AnytimeDataUsage = table.Column<float>(type: "real", nullable: false),
                     S2SCallMinsUsage = table.Column<int>(type: "integer", nullable: false),
                     S2SSmsCountUsage = table.Column<int>(type: "integer", nullable: false),
                     AnyNetCallMinsUsage = table.Column<int>(type: "integer", nullable: false),
@@ -132,17 +133,17 @@ namespace SriTel.Migrations
                 name: "VoiceService",
                 columns: table => new
                 {
-                    ServiceId = table.Column<long>(type: "bigint", nullable: false)
+                    UserId = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    IsRinginngTone = table.Column<bool>(type: "boolean", nullable: false),
+                    IsRingingTone = table.Column<int>(type: "integer", nullable: false),
                     RingingToneName = table.Column<string>(type: "text", nullable: false),
                     RingingToneCharge = table.Column<float>(type: "real", nullable: false),
-                    IsVoiceRoaming = table.Column<bool>(type: "boolean", nullable: false),
+                    IsVoiceRoaming = table.Column<int>(type: "integer", nullable: false),
                     VoiceRoamingCharge = table.Column<float>(type: "real", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_VoiceService", x => x.ServiceId);
+                    table.PrimaryKey("PK_VoiceService", x => x.UserId);
                 });
 
             migrationBuilder.CreateTable(
@@ -200,10 +201,10 @@ namespace SriTel.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    Name = table.Column<string>(type: "text", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: true),
                     Charge = table.Column<float>(type: "real", nullable: false),
-                    State = table.Column<string>(type: "text", nullable: false),
-                    Type = table.Column<string>(type: "text", nullable: false),
+                    State = table.Column<string>(type: "text", nullable: true),
+                    Type = table.Column<int>(type: "integer", nullable: false),
                     DataServiceId = table.Column<long>(type: "bigint", nullable: true),
                     ServiceId = table.Column<long>(type: "bigint", nullable: true)
                 },
@@ -221,11 +222,6 @@ namespace SriTel.Migrations
                         principalTable: "Bill",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Service_DataService_ServiceId",
-                        column: x => x.ServiceId,
-                        principalTable: "DataService",
-                        principalColumn: "ServiceId");
-                    table.ForeignKey(
                         name: "FK_Service_PackageUsage_ServiceId",
                         column: x => x.ServiceId,
                         principalTable: "PackageUsage",
@@ -235,11 +231,6 @@ namespace SriTel.Migrations
                         column: x => x.ServiceId,
                         principalTable: "Payment",
                         principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Service_VoiceService_ServiceId",
-                        column: x => x.ServiceId,
-                        principalTable: "VoiceService",
-                        principalColumn: "ServiceId");
                 });
 
             migrationBuilder.CreateTable(
@@ -250,7 +241,7 @@ namespace SriTel.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Nic = table.Column<string>(type: "text", nullable: false),
                     FirstName = table.Column<string>(type: "text", nullable: false),
-                    Lastname = table.Column<string>(type: "text", nullable: false),
+                    LastName = table.Column<string>(type: "text", nullable: false),
                     MobileNumber = table.Column<string>(type: "text", nullable: false),
                     Email = table.Column<string>(type: "text", nullable: false),
                     Password = table.Column<string>(type: "text", nullable: false),
@@ -271,6 +262,11 @@ namespace SriTel.Migrations
                         principalTable: "Bill",
                         principalColumn: "Id");
                     table.ForeignKey(
+                        name: "FK_User_DataService_UserId",
+                        column: x => x.UserId,
+                        principalTable: "DataService",
+                        principalColumn: "UserId");
+                    table.ForeignKey(
                         name: "FK_User_Notification_UserId",
                         column: x => x.UserId,
                         principalTable: "Notification",
@@ -285,6 +281,11 @@ namespace SriTel.Migrations
                         column: x => x.UserId,
                         principalTable: "Payment",
                         principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_User_VoiceService_UserId",
+                        column: x => x.UserId,
+                        principalTable: "VoiceService",
+                        principalColumn: "UserId");
                 });
 
             migrationBuilder.CreateIndex(
@@ -329,22 +330,22 @@ namespace SriTel.Migrations
                 name: "User");
 
             migrationBuilder.DropTable(
-                name: "DataService");
-
-            migrationBuilder.DropTable(
-                name: "VoiceService");
-
-            migrationBuilder.DropTable(
                 name: "AddOnActivation");
 
             migrationBuilder.DropTable(
                 name: "Bill");
 
             migrationBuilder.DropTable(
+                name: "DataService");
+
+            migrationBuilder.DropTable(
                 name: "Notification");
 
             migrationBuilder.DropTable(
                 name: "PackageUsage");
+
+            migrationBuilder.DropTable(
+                name: "VoiceService");
 
             migrationBuilder.DropTable(
                 name: "Payment");

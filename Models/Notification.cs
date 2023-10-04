@@ -5,7 +5,9 @@ namespace SriTel.Models
 {
     public class Notification
     {
-        [Key]public long Id { get; set; } //p
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public long Id { get; set; } //p
         public long UserId { get; set; }
         public required DateTime DateTime { get; set; } = DateTime.Now;
         public required string Title { get; set; }

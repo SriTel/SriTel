@@ -12,8 +12,8 @@ using SriTel.Models;
 namespace SriTel.Migrations
 {
     [DbContext(typeof(SriTelContext))]
-    [Migration("20230915102300_sritel_test")]
-    partial class sriteltest
+    [Migration("20230930134710_initial4")]
+    partial class initial4
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,6 +54,9 @@ namespace SriTel.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("Type")
+                        .HasColumnType("integer");
+
                     b.Property<int>("ValidNoOfDays")
                         .HasColumnType("integer");
 
@@ -83,6 +86,15 @@ namespace SriTel.Migrations
 
                     b.Property<float>("DataUsage")
                         .HasColumnType("real");
+
+                    b.Property<DateTime>("ExpireDateTime")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<float>("TotalData")
+                        .HasColumnType("real");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("integer");
 
                     b.Property<long>("UserId")
                         .HasColumnType("bigint");
@@ -133,11 +145,11 @@ namespace SriTel.Migrations
 
             modelBuilder.Entity("SriTel.Models.DataService", b =>
                 {
-                    b.Property<long>("ServiceId")
+                    b.Property<long>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<long>("ServiceId"));
+                    NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<long>("UserId"));
 
                     b.Property<float>("DataRoamingCharge")
                         .HasColumnType("real");
@@ -145,7 +157,7 @@ namespace SriTel.Migrations
                     b.Property<int>("IsDataRoaming")
                         .HasColumnType("integer");
 
-                    b.HasKey("ServiceId");
+                    b.HasKey("UserId");
 
                     b.ToTable("DataService");
                 });
@@ -194,7 +206,7 @@ namespace SriTel.Migrations
                     b.Property<int>("AnyNetSmsCount")
                         .HasColumnType("integer");
 
-                    b.Property<float>("AnytimeDate")
+                    b.Property<float>("AnytimeData")
                         .HasColumnType("real");
 
                     b.Property<float>("Charge")
@@ -218,14 +230,16 @@ namespace SriTel.Migrations
                     b.Property<float>("PeekData")
                         .HasColumnType("real");
 
-                    b.Property<string>("Renewal")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int?>("Renewal")
+                        .HasColumnType("integer");
 
                     b.Property<int>("S2SCallMins")
                         .HasColumnType("integer");
 
                     b.Property<int>("S2SSmsCount")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Type")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
@@ -247,7 +261,7 @@ namespace SriTel.Migrations
                     b.Property<int>("AnyNetSmsCountUsage")
                         .HasColumnType("integer");
 
-                    b.Property<float>("AnytimeDateUsage")
+                    b.Property<float>("AnytimeDataUsage")
                         .HasColumnType("real");
 
                     b.Property<int>("Month")
@@ -335,19 +349,16 @@ namespace SriTel.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<long?>("ServiceId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("State")
-                        .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("Type")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -374,7 +385,7 @@ namespace SriTel.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Lastname")
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -405,17 +416,17 @@ namespace SriTel.Migrations
 
             modelBuilder.Entity("SriTel.Models.VoiceService", b =>
                 {
-                    b.Property<long>("ServiceId")
+                    b.Property<long>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<long>("ServiceId"));
+                    NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<long>("UserId"));
 
-                    b.Property<bool>("IsRinginngTone")
-                        .HasColumnType("boolean");
+                    b.Property<int>("IsRingingTone")
+                        .HasColumnType("integer");
 
-                    b.Property<bool>("IsVoiceRoaming")
-                        .HasColumnType("boolean");
+                    b.Property<int>("IsVoiceRoaming")
+                        .HasColumnType("integer");
 
                     b.Property<float>("RingingToneCharge")
                         .HasColumnType("real");
@@ -427,7 +438,7 @@ namespace SriTel.Migrations
                     b.Property<float>("VoiceRoamingCharge")
                         .HasColumnType("real");
 
-                    b.HasKey("ServiceId");
+                    b.HasKey("UserId");
 
                     b.ToTable("VoiceService");
                 });
@@ -463,14 +474,6 @@ namespace SriTel.Migrations
                     b.HasOne("SriTel.Models.Payment", null)
                         .WithMany("Payment_Service")
                         .HasForeignKey("ServiceId");
-
-                    b.HasOne("SriTel.Models.DataService", null)
-                        .WithMany("DataService_Service")
-                        .HasForeignKey("ServiceId");
-
-                    b.HasOne("SriTel.Models.VoiceService", null)
-                        .WithMany("VoiceService_Service")
-                        .HasForeignKey("ServiceId");
                 });
 
             modelBuilder.Entity("SriTel.Models.User", b =>
@@ -494,6 +497,14 @@ namespace SriTel.Migrations
                     b.HasOne("SriTel.Models.Payment", null)
                         .WithMany("Payment_user")
                         .HasForeignKey("UserId");
+
+                    b.HasOne("SriTel.Models.DataService", null)
+                        .WithMany("DataServiceUser")
+                        .HasForeignKey("UserId");
+
+                    b.HasOne("SriTel.Models.VoiceService", null)
+                        .WithMany("VoiceServiceUser")
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("SriTel.Models.AddOnActivation", b =>
@@ -514,7 +525,7 @@ namespace SriTel.Migrations
 
             modelBuilder.Entity("SriTel.Models.DataService", b =>
                 {
-                    b.Navigation("DataService_Service");
+                    b.Navigation("DataServiceUser");
                 });
 
             modelBuilder.Entity("SriTel.Models.Notification", b =>
@@ -540,7 +551,7 @@ namespace SriTel.Migrations
 
             modelBuilder.Entity("SriTel.Models.VoiceService", b =>
                 {
-                    b.Navigation("VoiceService_Service");
+                    b.Navigation("VoiceServiceUser");
                 });
 #pragma warning restore 612, 618
         }

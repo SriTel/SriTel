@@ -562,13 +562,3 @@ C:/Users/Kimuthu Kisal/Desktop/SriTel/SriTel/bin/Debug/net7.0/Npgsql.EntityFrame
 /home/dinuka/SriTel/Server/obj/Debug/net7.0/ref/SriTel.dll
 /home/dinuka/SriTel/Server/bin/Debug/net7.0/BCrypt.Net-Next.dll
 /home/dinuka/SriTel/Server/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\Kimuthu Kisal\Desktop\SriTel\SriTel\obj\Debug\net7.0\SriTel.csproj.AssemblyReference.cache
-C:\Users\Kimuthu Kisal\Desktop\SriTel\SriTel\obj\Debug\net7.0\SriTel.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Kimuthu Kisal\Desktop\SriTel\SriTel\obj\Debug\net7.0\SriTel.AssemblyInfoInputs.cache
-C:\Users\Kimuthu Kisal\Desktop\SriTel\SriTel\obj\Debug\net7.0\SriTel.AssemblyInfo.cs
-C:\Users\Kimuthu Kisal\Desktop\SriTel\SriTel\obj\Debug\net7.0\SriTel.csproj.CoreCompileInputs.cache
-C:\Users\Kimuthu Kisal\Desktop\SriTel\SriTel\obj\Debug\net7.0\SriTel.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Kimuthu Kisal\Desktop\SriTel\SriTel\obj\Debug\net7.0\SriTel.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Kimuthu Kisal\Desktop\SriTel\SriTel\obj\Debug\net7.0\SriTel.dll
-C:\Users\Kimuthu Kisal\Desktop\SriTel\SriTel\obj\Debug\net7.0\refint\SriTel.dll
-C:\Users\Kimuthu Kisal\Desktop\SriTel\SriTel\obj\Debug\net7.0\SriTel.pdb

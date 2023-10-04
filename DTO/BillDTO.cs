@@ -10,9 +10,9 @@ public class BillDTO
     public long ServiceId { get; set; }    //service->serviceId
     public int Month { get; set; }
     public int Year { get; set; }
-    public float TaxAmount { get; set; }
-    public float TotalAmount { get; set; }
-    public float DueAmount { get; set; }
+    public double TaxAmount { get; set; }
+    public double TotalAmount { get; set; }
+    public double DueAmount { get; set; }
 
 
     public static BillDTO FromBill(Bill bill)
@@ -34,7 +34,6 @@ public class BillDTO
     {
         return new Bill
         {
-            Id = Id,
             UserId = UserId,
             ServiceId = ServiceId,
             Month = Month,

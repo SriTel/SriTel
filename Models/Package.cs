@@ -5,10 +5,13 @@ namespace SriTel.Models
 {
     public class Package
     {
-        [Key]public long Id { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public long Id { get; set; }
         public required string Name { get; set; }
-        public required string? Renewal { get; set; }
-        // public required string Status { get; set; }
+        public required RenewalType? Renewal { get; set; }
+        
+        public required ServiceType Type { get; set; }
         public required string Description { get; set; }
         public required string Image { get; set; }
         public required float Charge { get; set; }
@@ -19,5 +22,18 @@ namespace SriTel.Models
         public required int S2SSmsCount { get; set; }
         public required int AnyNetCallMins { get; set; }
         public required int AnyNetSmsCount { get; set; }
+    }
+    
+    public enum ServiceType
+    {
+        Data,
+        Voice,
+    }
+
+    public enum RenewalType
+    {
+        Daily,
+        Weekly,
+        Monthly,
     }
 }

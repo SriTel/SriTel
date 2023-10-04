@@ -10,8 +10,9 @@ public class PaymentDTO
         public DateTime PayDateTime { get; set; }  // p
         public long UserId { get; set; }    //user->userId   
         public long ServiceId { get; set; }    //service->serviceId   
-        public string? PayMethod { get; set; }
-        public float PayAmount { get; set; }
+        public PaymentMethodType PayMethod { get; set; }
+        public double PayAmount { get; set; }
+        public double Outstanding { get; set; }
 
 
     public static PaymentDTO FromPayment(Payment payment)
@@ -24,7 +25,8 @@ public class PaymentDTO
             UserId = payment.UserId,
             ServiceId = payment.ServiceId,
             PayMethod = payment.PayMethod,
-            PayAmount = payment.PayAmount
+            PayAmount = payment.PayAmount,
+            Outstanding = payment.Outstanding
         };
     }
 
@@ -34,11 +36,12 @@ public class PaymentDTO
         {
             Id = Id,
             BillId = BillId,
-            PayDateTime = PayDateTime,
+            PayDateTime = DateTime.Now,
             UserId = UserId,
             ServiceId = ServiceId,
             PayMethod = PayMethod!,
-            PayAmount = PayAmount
+            PayAmount = PayAmount,
+            Outstanding = Outstanding
         };
     }
 }

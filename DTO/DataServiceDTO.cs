@@ -5,7 +5,7 @@ namespace SriTel.DTO;
 
 public class DataServiceDTO
 {
-    [Required]public long ServiceId { get; set; } //Service->serviceId
+    [Required]public long UserId { get; set; } //Service->serviceId
     public int IsDataRoaming { get; set; }
     public float DataRoamingCharge { get; set; }
 
@@ -14,7 +14,7 @@ public class DataServiceDTO
     {
         return new DataServiceDTO
         {
-            ServiceId = dataService.ServiceId,
+            UserId = dataService.UserId,
             IsDataRoaming = dataService.IsDataRoaming,
             DataRoamingCharge = dataService.DataRoamingCharge
         };
@@ -24,7 +24,7 @@ public class DataServiceDTO
     {
         return new DataService
         {
-            ServiceId = ServiceId,
+            UserId = UserId,
             IsDataRoaming = IsDataRoaming,
             DataRoamingCharge = DataRoamingCharge
         };

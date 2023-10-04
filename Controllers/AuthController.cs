@@ -33,7 +33,15 @@ namespace SriTel.Controllers
             if (!(user != null && VerifyPassword(user.Password, loginDto.Password))) return Unauthorized();
             
             var token = GenerateJwtToken(user.Email);
-            return Ok(new { Token = token });
+            return Ok(new {
+                user.Id,
+                user.FirstName,
+                user.LastName,
+                user.MobileNumber,
+                user.Email,
+                Image = "profile.png",
+                user.Nic,
+                JwtToken = token });
         }
 
         // Generate JWT token

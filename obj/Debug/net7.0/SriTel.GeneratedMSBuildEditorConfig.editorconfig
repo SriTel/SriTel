@@ -9,17 +9,9 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SriTel
 build_property.RootNamespace = SriTel
-<<<<<<< HEAD
-build_property.ProjectDir = C:\Users\Kimuthu Kisal\Desktop\SriTel\SriTel\
+build_property.ProjectDir = /home/dinuka/SriTel/Server/
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Kimuthu Kisal\Desktop\SriTel\SriTel
-=======
-build_property.ProjectDir = D:\UCSC\UCSC_Assignments\3_year\middleware\assignment_3\SriTel\
-build_property.RazorLangVersion = 7.0
-build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\UCSC\UCSC_Assignments\3_year\middleware\assignment_3\SriTel
->>>>>>> b51e55e6a71cf0fa4b1e7d7500ae89afcb1427d9
+build_property.MSBuildProjectDirectory = /home/dinuka/SriTel/Server
 build_property._RazorSourceGeneratorDebug = 
