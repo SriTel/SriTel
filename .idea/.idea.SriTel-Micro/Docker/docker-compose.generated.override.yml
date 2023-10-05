@@ -1,0 +1,171 @@
+# This is a generated file. Not intended for manual editing.
+version: "3.8"
+services:
+  addon-service:
+    build:
+      context: "/home/dinuka/SriTel/SriTel-Micro"
+      dockerfile: "./AddOnService/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/AddOnService.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      NUGET_PACKAGES: "/home/dinuka/.nuget/packages"
+      NUGET_FALLBACK_PACKAGES: "/home/dinuka/.nuget/packages"
+    image: "addon-service:dev"
+    ports: []
+    volumes:
+    - "/home/dinuka/.nuget/packages:/root/.nuget/fallbackpackages"
+    - "/home/dinuka/SriTel/SriTel-Micro/AddOnService:/app:rw"
+    - "/home/dinuka/SriTel/SriTel-Micro:/src:rw"
+    working_dir: "/app"
+  auth-service:
+    build:
+      context: "/home/dinuka/SriTel/SriTel-Micro"
+      dockerfile: "./AuthService/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/AuthService.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      NUGET_PACKAGES: "/home/dinuka/.nuget/packages"
+      NUGET_FALLBACK_PACKAGES: "/home/dinuka/.nuget/packages"
+    image: "auth-service:dev"
+    ports: []
+    volumes:
+    - "/home/dinuka/.nuget/packages:/root/.nuget/fallbackpackages"
+    - "/home/dinuka/SriTel/SriTel-Micro/AuthService:/app:rw"
+    - "/home/dinuka/SriTel/SriTel-Micro:/src:rw"
+    working_dir: "/app"
+  balance-service:
+    build:
+      context: "/home/dinuka/SriTel/SriTel-Micro"
+      dockerfile: "./BalanceService/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/BalanceService.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      NUGET_PACKAGES: "/home/dinuka/.nuget/packages"
+      NUGET_FALLBACK_PACKAGES: "/home/dinuka/.nuget/packages"
+    image: "balance-service:dev"
+    ports: []
+    volumes:
+    - "/home/dinuka/.nuget/packages:/root/.nuget/fallbackpackages"
+    - "/home/dinuka/SriTel/SriTel-Micro/BalanceService:/app:rw"
+    - "/home/dinuka/SriTel/SriTel-Micro:/src:rw"
+    working_dir: "/app"
+  bill-service:
+    build:
+      context: "/home/dinuka/SriTel/SriTel-Micro"
+      dockerfile: "./BillService/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/BillService.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      NUGET_PACKAGES: "/home/dinuka/.nuget/packages"
+      NUGET_FALLBACK_PACKAGES: "/home/dinuka/.nuget/packages"
+    image: "bill-service:dev"
+    ports: []
+    volumes:
+    - "/home/dinuka/.nuget/packages:/root/.nuget/fallbackpackages"
+    - "/home/dinuka/SriTel/SriTel-Micro/BillService:/app:rw"
+    - "/home/dinuka/SriTel/SriTel-Micro:/src:rw"
+    working_dir: "/app"
+  orchestrator:
+    build:
+      context: "/home/dinuka/SriTel/SriTel-Micro"
+      dockerfile: "./Orchestrator/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/Orchestrator.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      NUGET_PACKAGES: "/home/dinuka/.nuget/packages"
+      NUGET_FALLBACK_PACKAGES: "/home/dinuka/.nuget/packages"
+    image: "orchestrator:dev"
+    ports: []
+    volumes:
+    - "/home/dinuka/.nuget/packages:/root/.nuget/fallbackpackages"
+    - "/home/dinuka/SriTel/SriTel-Micro/Orchestrator:/app:rw"
+    - "/home/dinuka/SriTel/SriTel-Micro:/src:rw"
+    working_dir: "/app"
+  package-service:
+    build:
+      context: "/home/dinuka/SriTel/SriTel-Micro"
+      dockerfile: "./PackageService/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/PackageService.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      NUGET_PACKAGES: "/home/dinuka/.nuget/packages"
+      NUGET_FALLBACK_PACKAGES: "/home/dinuka/.nuget/packages"
+    image: "package-service:dev"
+    ports: []
+    volumes:
+    - "/home/dinuka/.nuget/packages:/root/.nuget/fallbackpackages"
+    - "/home/dinuka/SriTel/SriTel-Micro/PackageService:/app:rw"
+    - "/home/dinuka/SriTel/SriTel-Micro:/src:rw"
+    working_dir: "/app"
+  payment-service:
+    build:
+      context: "/home/dinuka/SriTel/SriTel-Micro"
+      dockerfile: "./PaymentService/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/PaymentService.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      NUGET_PACKAGES: "/home/dinuka/.nuget/packages"
+      NUGET_FALLBACK_PACKAGES: "/home/dinuka/.nuget/packages"
+    image: "payment-service:dev"
+    ports: []
+    volumes:
+    - "/home/dinuka/.nuget/packages:/root/.nuget/fallbackpackages"
+    - "/home/dinuka/SriTel/SriTel-Micro/PaymentService:/app:rw"
+    - "/home/dinuka/SriTel/SriTel-Micro:/src:rw"
+    working_dir: "/app"
+  telco-service:
+    build:
+      context: "/home/dinuka/SriTel/SriTel-Micro"
+      dockerfile: "./TelcoService/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/TelcoService.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      NUGET_PACKAGES: "/home/dinuka/.nuget/packages"
+      NUGET_FALLBACK_PACKAGES: "/home/dinuka/.nuget/packages"
+    image: "telco-service:dev"
+    ports: []
+    volumes:
+    - "/home/dinuka/.nuget/packages:/root/.nuget/fallbackpackages"
+    - "/home/dinuka/SriTel/SriTel-Micro/TelcoService:/app:rw"
+    - "/home/dinuka/SriTel/SriTel-Micro:/src:rw"
+    working_dir: "/app"
