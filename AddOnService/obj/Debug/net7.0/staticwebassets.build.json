@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "kB2hMpxqdI2mLcxKM0usIOP0FLaIkFlqk3ZTi/60YdY=",
+  "Source": "AddOnService",
+  "BasePath": "_content/AddOnService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

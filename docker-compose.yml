@@ -1,0 +1,127 @@
+﻿version: '3.8'
+
+networks:
+  sritelnet:
+    driver: bridge
+
+services:
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: SriTelDB
+    networks:
+      - sritelnet
+    volumes:
+      - ./sriteldb.sql:/docker-entrypoint-initdb.d/sriteldb.sql
+
+  auth-service:
+    build:
+      context: .
+      dockerfile: ./AuthService/Dockerfile
+    container_name: sritel-auth-service
+    image: ${DOCKER_REGISTRY-}auth-service
+    environment:
+      DATABASE_URL: "Host=postgres;Port=5432;Database=SriTelDB;Username=postgres;Password=123;"
+    networks:
+      - sritelnet
+    depends_on:
+      - postgres
+    command: ["dotnet", "ef", "database", "update"]
+  
+  telco-service:
+    build:
+      context: .
+      dockerfile: ./TelcoService/Dockerfile
+    container_name: sritel-telco-service
+    image: ${DOCKER_REGISTRY-}telco-service
+    environment:
+      DATABASE_URL: "Host=postgres;Port=5432;Database=SriTelDB;Username=postgres;Password=123;"
+    networks:
+      - sritelnet
+    depends_on:
+      - postgres
+    command: [ "dotnet", "ef", "database", "update" ]
+  
+  package-service:
+    build:
+      context: .
+      dockerfile: ./PackageService/Dockerfile
+    container_name: sritel-package-service
+    image: ${DOCKER_REGISTRY-}package-service
+    environment:
+      DATABASE_URL: "Host=postgres;Port=5432;Database=SriTelDB;Username=postgres;Password=123;"
+    networks:
+      - sritelnet
+    depends_on:
+      - postgres
+    command: [ "dotnet", "ef", "database", "update" ]
+  
+  addon-service:
+    build:
+      context: .
+      dockerfile: ./AddOnService/Dockerfile
+    container_name: sritel-addon-service
+    image: ${DOCKER_REGISTRY-}addon-service
+    environment:
+      DATABASE_URL: "Host=postgres;Port=5432;Database=SriTelDB;Username=postgres;Password=123;"
+    networks:
+      - sritelnet
+    depends_on:
+      - postgres
+    command: [ "dotnet", "ef", "database", "update" ]
+  
+  balance-service:
+    build:
+      context: .
+      dockerfile: ./BalanceService/Dockerfile
+    container_name: sritel-balance-service
+    image: ${DOCKER_REGISTRY-}balance-service
+    environment:
+      DATABASE_URL: "Host=postgres;Port=5432;Database=SriTelDB;Username=postgres;Password=123;"
+    networks:
+      - sritelnet
+    depends_on:
+      - postgres
+    command: [ "dotnet", "ef", "database", "update" ]
+  
+  bill-service:
+    build:
+      context: .
+      dockerfile: ./BillService/Dockerfile
+    container_name: sritel-bill-service
+    image: ${DOCKER_REGISTRY-}bill-service
+    environment:
+      DATABASE_URL: "Host=postgres;Port=5432;Database=SriTelDB;Username=postgres;Password=123;"
+    networks:
+      - sritelnet
+    depends_on:
+      - postgres
+    command: [ "dotnet", "ef", "database", "update" ]
+  
+  payment-service:
+    build:
+      context: .
+      dockerfile: ./PaymentService/Dockerfile
+    container_name: sritel-payment-service
+    image: ${DOCKER_REGISTRY-}payment-service
+    environment:
+      DATABASE_URL: "Host=postgres;Port=5432;Database=SriTelDB;Username=postgres;Password=123;"
+    networks:
+      - sritelnet
+    depends_on:
+      - postgres
+    command: [ "dotnet", "ef", "database", "update" ]
+  
+  orchestrator:
+    build:
+      context: .
+      dockerfile: ./Orchestrator/Dockerfile
+    container_name: sritel-orchestrator
+    image: ${DOCKER_REGISTRY-}orchestrator
+    networks:
+      - sritelnet
+    ports:
+      - "5000:80"
