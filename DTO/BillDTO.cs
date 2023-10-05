@@ -8,11 +8,11 @@ public class BillDTO
     [Required]public long Id { get; set; }
     public long UserId { get; set; }    //user->userId 
     public long ServiceId { get; set; }    //service->serviceId
-    public required int Month { get; set; }
-    public required int Year { get; set; }
-    public required float TaxAmount { get; set; }
-    public required float TotalAmount { get; set; }
-    public required float DueAmount { get; set; }
+    public int Month { get; set; }
+    public int Year { get; set; }
+    public double TaxAmount { get; set; }
+    public double TotalAmount { get; set; }
+    public double DueAmount { get; set; }
 
 
     public static BillDTO FromBill(Bill bill)
@@ -34,7 +34,6 @@ public class BillDTO
     {
         return new Bill
         {
-            Id = Id,
             UserId = UserId,
             ServiceId = ServiceId,
             Month = Month,

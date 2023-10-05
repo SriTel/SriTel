@@ -7,10 +7,10 @@ public class ServiceDTO
 {
     [Required]public long Id { get; set; }
         // public long PackageId { get; set; } //package->packageId
-        public required string Name { get; set; }
-        public required float Charge { get; set; }
-        public required string State { get; set; }
-        public required string Type { get; set; }
+        public string? Name { get; set; }
+        public float Charge { get; set; }
+        public string? State { get; set; }
+        public ServiceType Type { get; set; }
 
 
     public static ServiceDTO FromService(Service service)
@@ -30,10 +30,10 @@ public class ServiceDTO
         return new Service
         {
             Id = Id,
-            Name = Name,
+            Name = Name!,
             Charge = Charge,
-            State = State,
-            Type = Type
+            State = State!,
+            Type = Type!
         };
     }
 }

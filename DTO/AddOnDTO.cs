@@ -6,12 +6,14 @@ namespace SriTel.DTO;
 public class AddOnDTO
 {
     [Required]public long Id { get; set; } 
-    public required string Name { get; set; } = string.Empty;
-    public required string Image { get; set; } = string.Empty;
-    public required string Description { get; set; } = string.Empty;
-    public required int ValidNoOfDays { get; set; } = 0;
-    public required float ChargePerGb { get; set; } = 0;
-    public required float DataAmount { get; set; } = 0;
+    public string Name { get; set; } = string.Empty;
+    
+    public required AddOnType Type { get; set; }
+    public string Image { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
+    public int ValidNoOfDays { get; set; } = 0;
+    public float ChargePerGb { get; set; } = 0;
+    public float DataAmount { get; set; } = 0;
 
 
     public static AddOnDTO FromAddOn(AddOn addOn)
@@ -20,6 +22,7 @@ public class AddOnDTO
         {
             Id = addOn.Id,
             Name = addOn.Name,
+            Type = addOn.Type,
             Image = addOn.Image,
             Description = addOn.Description,
             ValidNoOfDays = addOn.ValidNoOfDays,
@@ -34,6 +37,7 @@ public class AddOnDTO
         {
             Id = Id,
             Name = Name,
+            Type = Type,
             Image = Image,
             Description = Description,
             ValidNoOfDays = ValidNoOfDays,

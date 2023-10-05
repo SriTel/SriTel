@@ -5,7 +5,9 @@ namespace SriTel.Models
     // [PrimaryKey(nameof(UserId), nameof(ServiceId),nameof(Year),nameof(Month))]
     public class PackageUsage
     {
-        [Key]public long Id { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public long Id { get; set; }
         public long UserId { get; set; } // p
         public long ServiceId { get; set; } // p
         public int Year { get; set; } // p
@@ -14,7 +16,7 @@ namespace SriTel.Models
         public required DateTime UpdateDateTime { get; set; }  // package change date
         public required float OffPeekDataUsage { get; set; }
         public required float PeekDataUsage { get; set; }
-        public required float AnytimeDateUsage { get; set; }
+        public required float AnytimeDataUsage { get; set; }
         public required int S2SCallMinsUsage { get; set; }
         public required int S2SSmsCountUsage { get; set; }
         public required int AnyNetCallMinsUsage { get; set; }
