@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "T0BEZf9MQNmVJx6CIXvRl4hO29w6YaZlRXaj3zcWGmA=",
+  "Source": "BillService",
+  "BasePath": "_content/BillService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
