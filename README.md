@@ -1,15 +1,24 @@
-# Instructions to run micro-services
-## Run following commands in the given order after navigating to current location
+## Installation
 
-	docker-compose build
-	docker-compose up
+1. Clone this repository to your local machine:
 
-## This will build and start the micro services.
-## And expose the endpoint throuth following baseUrl
-## This baseUrl will be used by the mobile and web clients to send REST api requests
+   ```bash
+   https://github.com/SriTel/SriTel.git
+   ```
 
-	baseUrl : http://192.168.1.4:5000
+2. Navigate to the project directory:
+   ```bash
+   cd SriTel
+   ```
 
-## NOTE
-## Change the above ip address in Orchestrator/ocelot.json to your host machine's ip address.
-## You can find it by typing 'ifconfig' on your terminal
+3. Change the BaseUrl to your IP address plus a suitable port
+   ```bash
+   baseUrl : http://192.168.1.4:5000
+   ```
+
+4. Run following commands in the given order to build and start the micro services:
+   ```bash
+   docker-compose build
+   docker-compose up
+   ```
+
